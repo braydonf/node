@@ -1,7 +1,6 @@
 'use strict';
 const common = require('../common');
 const fs = require('fs');
-const assert = require('assert');
 
 if (!common.hasCrypto) {
   console.log('1..0 # Skipped: missing crypto');
@@ -19,7 +18,7 @@ var connections = {};
 var server = https.createServer(options, function(req, res) {
   var interval = setInterval(function() {
     res.write('data');
-  }, 5100);
+  }, 1000);
   interval.unref();
 });
 
